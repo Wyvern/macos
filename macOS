@@ -1,0 +1,90 @@
+MacOS:
+
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s /bin/zsh
+
+csrutil disable; csrutil enable
+reboot
+sudo spctl --master-disable
+brew cask install mpv
+
+chflags uchg  /private/var/db/analyticsd
+chflags uchg  /private/var/db/diagnostics
+chflags uchg  /private/var/db/reportmemoryexception
+chflags uchg  /var/log
+chflags uchg  /var/vm
+chflags uchg  /Library/Logs/
+chflags uchg  ~/Library/Logs/
+
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g NSWindowResizeTime -float 0.001
+defaults write -g NSToolbarFullScreenAnimationDuration -float 0
+defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
+defaults write -g QLPanelAnimationDuration -float 0
+defaults write -g NSScrollAnimationEnabled -bool false
+defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0
+defaults write -g NSScrollViewRubberbanding -bool false
+defaults write com.apple.CrashReporter DialogType none	
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder QLEnableSlowMotion -bool false
+defaults write com.apple.dock expose-animation-duration -float 0
+defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES	
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock workspaces-edge-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock springboard-show-duration -float 0
+defaults write com.apple.dock springboard-hide-duration -float 0
+defaults write com.apple.dock springboard-page-duration -float 0
+defaults write com.apple.Mail DisableSendAnimations -bool true
+defaults write com.apple.Mail DisableReplyAnimations -bool true
+
+
+launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.Self.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportGPURestart.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.sysdiagnose_agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.MRTa.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.IMLoggingAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
+
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.DumpPanic.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.DumpGPURestart
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.findmydeviced.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymac.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymacmessenger.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist	
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SubmitDiagInfo.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.aslmanager.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.aslmanager.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.MRTd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sysdiagnose.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.analyticsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.powerlogd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.awdd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.daily.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstatsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logkextloadsd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
+
+xcrun simctl delete unavailable
