@@ -3,6 +3,8 @@ MacOS:
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /bin/zsh
 
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 csrutil disable; csrutil enable
 reboot
 sudo spctl --master-disable
