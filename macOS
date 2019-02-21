@@ -47,10 +47,10 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.Self.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportGPURestart.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.sysdiagnose_agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.MRTa.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist 
