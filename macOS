@@ -41,7 +41,6 @@ defaults write com.apple.dock springboard-page-duration -float 0
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 
-
 launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.Self.plist
@@ -58,6 +57,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.IMLoggingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
@@ -83,6 +84,9 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.dai
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstatsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logkextloadsd.plist 
