@@ -87,6 +87,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.pli
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logkextloadsd.plist 
