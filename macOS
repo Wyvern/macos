@@ -59,6 +59,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.chec
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
@@ -90,7 +93,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logkextloadsd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
 
