@@ -1,13 +1,14 @@
 MacOS:
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s /bin/zsh
-
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+chsh -s /bin/zsh
 
 csrutil disable; csrutil enable
 reboot
 sudo spctl --master-disable
+
 brew cask install mpv
 
 chflags uchg  /private/var/db/analyticsd
@@ -41,7 +42,9 @@ defaults write com.apple.dock springboard-page-duration -float 0
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 
+
 launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.spindump_agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.Self.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
@@ -53,15 +56,16 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.IMLoggingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.IMLoggingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
@@ -89,11 +93,12 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstatsd.pl
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
+
 
 xcrun simctl delete unavailable
