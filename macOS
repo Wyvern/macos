@@ -60,6 +60,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.chec
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.assistant_service.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.IMLoggingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
