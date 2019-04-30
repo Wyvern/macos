@@ -104,10 +104,10 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
-
 
 xcrun simctl delete unavailable
