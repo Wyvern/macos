@@ -41,6 +41,9 @@ defaults write com.apple.dock springboard-hide-duration -float 0
 defaults write com.apple.dock springboard-page-duration -float 0
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
+defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.1
+defaults write com.apple.Safari WebKitResourceTimedLayoutDelay 0.1
+
 
 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist 
@@ -72,6 +75,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.soagent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 
@@ -83,7 +88,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.findmydeviced.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymac.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.findmymacmessenger.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist	
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.spindump.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.tailspind.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SubmitDiagInfo.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.aslmanager.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.aslmanager.plist 
@@ -105,9 +111,9 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicati
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
+
 
 xcrun simctl delete unavailable
