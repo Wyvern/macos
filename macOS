@@ -71,6 +71,10 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.IMLoggingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familycircled.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familycontrols.useragent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familynotificationd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.progressd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.macos.studentd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.routined.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ScreenTimeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
