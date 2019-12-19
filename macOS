@@ -81,7 +81,16 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserve
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.soagent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.TrustEvaluationAgent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.DiagnosticReportCleanup.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.java.InstallOnDemand.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
@@ -116,6 +125,16 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.pl
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.applessdstatistics.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.startup.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.speech.speechsynthesisd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
 
