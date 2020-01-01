@@ -57,6 +57,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.MRTa.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
@@ -84,6 +85,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.postinstall.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaanalysisd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaremoteagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.FollowUpUI.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.TrustEvaluationAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.DiagnosticReportCleanup.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.java.InstallOnDemand.plist
@@ -125,6 +129,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.enroll.plist
