@@ -19,7 +19,7 @@ chflags uchg  /var/vm
 chflags uchg  /Library/Logs/
 chflags uchg  ~/Library/Logs/
 
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g NSWindowResizeTime -float 0.001
 defaults write -g NSToolbarFullScreenAnimationDuration -float 0
 defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
@@ -29,6 +29,9 @@ defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0
 defaults write -g NSScrollViewRubberbanding -bool false
 defaults write com.apple.CrashReporter DialogType none	
 defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder AnimateInfoPanes -bool false
+defaults Write com.apple.finder AnimateSnapToGrid -bool false
+defaults write com.apple.finder FXEnableSlowAnimation -bool false
 defaults write com.apple.finder QLEnableSlowMotion -bool false
 defaults write com.apple.dock expose-animation-duration -float 0
 defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES	
