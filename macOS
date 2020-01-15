@@ -136,6 +136,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServicesExtended.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist 
