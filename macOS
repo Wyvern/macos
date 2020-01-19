@@ -62,7 +62,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
@@ -128,7 +127,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.pli
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
