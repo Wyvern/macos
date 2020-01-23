@@ -79,6 +79,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.macos.studentd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.routined.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ScreenTimeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
@@ -87,7 +88,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.postinstall.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaanalysisd.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaremoteagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.FollowUpUI.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.TrustEvaluationAgent.plist 
@@ -98,6 +98,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.en
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.AXVisualSupportAgent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.identityservicesd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
@@ -129,10 +131,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist
