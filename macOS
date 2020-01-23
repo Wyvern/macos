@@ -98,8 +98,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.en
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.AXVisualSupportAgent.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.identityservicesd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
