@@ -98,6 +98,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ManagedClientAgent.en
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.alf.agent.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
@@ -130,10 +132,10 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.corecaptured.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.remotepairtool.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobile.keybagd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServicesExtended.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ManagedClient.plist 
@@ -144,6 +146,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagno
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*
 
 
