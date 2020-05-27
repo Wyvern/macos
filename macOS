@@ -51,6 +51,7 @@ defaults write com.apple.dock springboard-page-duration -float 0
 
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
+
 defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.1
 defaults write com.apple.Safari WebKitResourceTimedLayoutDelay 0.1
 
@@ -86,6 +87,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaanalysisd.plist 
@@ -96,6 +98,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.reversetemplated.plis
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsaccountsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.Safari.SafeBrowsing.Service.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist 
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
@@ -121,15 +124,20 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.dai
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
-
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
+
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
