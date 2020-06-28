@@ -124,8 +124,10 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.dai
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.runningboardd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.jetsamproperties.Mac.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
