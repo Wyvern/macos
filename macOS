@@ -22,8 +22,7 @@ brew cask install mpv
 sudo pmset -a sleep 0; sudo pmset -a hibernatemode 0; sudo pmset -a disablesleep 1;
 sudo pmset -a sleep 1; sudo pmset -a hibernatemode 3; sudo pmset -a disablesleep 0;
 
-cd /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
-sudo ./airport debug -DriverWPA
+defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
 
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g NSWindowResizeTime -float 0.001
@@ -115,6 +114,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SubmitDiagInfo.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.awdd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.aslmanager.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.aslmanager.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sysdiagnose.plist
@@ -124,6 +124,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.dai
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.endpointsecurity.endpointsecurityd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.jetsamproperties.Mac.plist
@@ -133,6 +134,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.MobileFileIntegrity.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
