@@ -134,7 +134,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.MobileFileIntegrity.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
