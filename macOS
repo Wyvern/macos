@@ -97,6 +97,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.reversetemplated.plis
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsaccountsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.Safari.SafeBrowsing.Service.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist 
 
@@ -134,16 +135,18 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothReporter.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothd.plist 
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.managedconfiguration.teslad.plist 
-
 
 xcrun simctl delete unavailable
