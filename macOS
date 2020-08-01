@@ -90,6 +90,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaanalysisd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPlayUIAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.FollowUpUI.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist 
@@ -98,6 +99,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.amsaccountsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaremoteagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.Safari.SafeBrowsing.Service.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist 
 
@@ -136,6 +138,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.AirPlayXPCHelper.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SafeEjectGPUStartupDaemon.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
@@ -143,6 +146,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothReporter.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
