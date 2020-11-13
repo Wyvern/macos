@@ -8,6 +8,7 @@ chsh -s /bin/zsh
 csrutil disable; csrutil enable
 reboot
 sudo spctl --master-disable
+DevToolsSecurity -enable
 
 # Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -23,10 +24,13 @@ sudo pmset -a sleep 0; sudo pmset -a hibernatemode 0; sudo pmset -a disablesleep
 sudo pmset -a sleep 1; sudo pmset -a hibernatemode 3; sudo pmset -a disablesleep 0;
 
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool YES
 
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g NSWindowResizeTime -float 0.001
 defaults write -g NSToolbarFullScreenAnimationDuration -float 0
+defaults write -g NSToolbarTitleViewRolloverDelay -float 0
 defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
 defaults write -g QLPanelAnimationDuration -float 0
 defaults write -g NSScrollAnimationEnabled -bool false
@@ -86,6 +90,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
@@ -122,15 +128,18 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.aslmanage
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sysdiagnose.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.analyticsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifianalyticsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.daily.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.endpointsecurity.endpointsecurityd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.jetsamproperties.Mac.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coreduetd.osx.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
