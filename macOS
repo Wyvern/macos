@@ -61,6 +61,8 @@ defaults write com.apple.Safari WebKitResourceTimedLayoutDelay 0.1
 
 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnosticextensionsd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.symptomsd-diag.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.spindump_agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
