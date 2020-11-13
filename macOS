@@ -113,6 +113,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.pli
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.CrashReporterSupportHelper.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.DumpPanic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.DumpGPURestart.plist
