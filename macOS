@@ -94,6 +94,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.amsengagementd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
@@ -143,8 +144,10 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagno
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.jetsamproperties.Mac.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coreduetd.osx.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.applessdstatistics.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.backupd-helper.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.revisiond.plist
@@ -162,7 +165,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.pl
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.appleseed.fbahelperd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.managedconfiguration.teslad.plist 
 
 xcrun simctl delete unavailable
