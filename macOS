@@ -5,6 +5,13 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 chsh -s /bin/zsh
 
+# boot volume in Big Sur,
+csrutil authenticated-root disable
+sudo bless --folder /[mountpath]/System/Library/CoreServices --bootefi --create-snapshot
+
+#disable/enable mds server
+sudo mdutil -a -i off/on
+
 csrutil disable; csrutil enable
 reboot
 sudo spctl --master-disable
@@ -14,9 +21,9 @@ DevToolsSecurity -enable
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable Disk Image Verification: Verifying ...
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+defaults write  com.apple.frameworks.diskimages skip-verify -bool true
+defaults write  com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write  com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 brew cask install mpv
 
@@ -87,12 +94,14 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.macos.studentd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.routined.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ScreenTimeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.dmd.agent.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.dmd.agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.corespotlightd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.networkserviceproxy-osx.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsengagementd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette.plist
