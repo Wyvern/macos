@@ -5,21 +5,39 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 chsh -s /bin/zsh
 
-# boot volume in Big Sur,
+#disable kernel_task high cpu
+fsck -y 
+mount -uw /
+rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext
+
+# boot volume in Big Sur
+csrutil disable
 csrutil authenticated-root disable
 sudo bless --folder /[mountpath]/System/Library/CoreServices --bootefi --create-snapshot
 
 #disable/enable mds server
 sudo mdutil -a -i off/on
 
+#disable OCSP 
+sudo defaults write /Library/Preferences/com.apple.security.revocation.plist OCSPStyle None
+sudo defaults write /Library/Preferences/com.apple.security.revocation.plist CRLStyle None
+sudo defaults write com.apple.security.revocation.plist OCSPStyle None
+sudo defaults write com.apple.security.revocation.plist CRLStyle None
+
+dsenableroot 
 csrutil disable; csrutil enable
 reboot
 sudo spctl --master-disable
 DevToolsSecurity -enable
 
+sudo softwareupdate --list
+sudo softwareupdate -ia
+
+mdutil -i off -d /path/to/volume
+
 # Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
-
+sudo spctl --master-disable
 # Disable Disk Image Verification: Verifying ...
 defaults write  com.apple.frameworks.diskimages skip-verify -bool true
 defaults write  com.apple.frameworks.diskimages skip-verify-locked -bool true
@@ -27,9 +45,13 @@ defaults write  com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 brew cask install mpv
 
+sudo systemsetup -getcomputersleep
+sudo systemsetup -setcomputersleep Never
+sudo systemsetup -setcomputersleep 30
 sudo pmset -a sleep 0; sudo pmset -a hibernatemode 0; sudo pmset -a disablesleep 1;
 sudo pmset -a sleep 1; sudo pmset -a hibernatemode 3; sudo pmset -a disablesleep 0;
 
+xcrun simctl delete unavailable
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
 defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool YES
@@ -59,6 +81,21 @@ defaults write com.apple.dock springboard-show-duration -float 0
 defaults write com.apple.dock springboard-hide-duration -float 0
 defaults write com.apple.dock springboard-page-duration -float 0
 
+defaults write com.apple.universalaccess reduceTransparency -bool true
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop
+defaults write com.apple.Terminal FocusFollowsMouse -string YES
+defaults write com.apple.finder AppleShowAllFiles true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
+sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+sudo nvram BootAudio=%00
+
+
+
 defaults write com.apple.Mail DisableSendAnimations -bool true
 defaults write com.apple.Mail DisableReplyAnimations -bool true
 
@@ -76,6 +113,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportGPURestart.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.sysdiagnose_agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.assessmentagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
@@ -98,12 +136,15 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.dmd.agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.corespotlightd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.networkserviceproxy-osx.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsengagementd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AMPLibraryAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.appleseed.seedusaged.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.contacts.donation-agent.plist
@@ -113,6 +154,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.FollowUpUI.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.reversetemplated.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.photolibraryd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsaccountsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
