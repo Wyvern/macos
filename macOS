@@ -217,5 +217,3 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.pl
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.managedconfiguration.teslad.plist 
-
-xcrun simctl delete unavailable
