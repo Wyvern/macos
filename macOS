@@ -47,7 +47,7 @@ brew cask install mpv
 
 sudo systemsetup -getcomputersleep
 sudo systemsetup -setcomputersleep Never
-sudo systemsetup -setcomputersleep 30
+sudo systemsetup -setcomputersleep 10
 sudo pmset -a sleep 0; sudo pmset -a hibernatemode 0; sudo pmset -a disablesleep 1;
 sudo pmset -a sleep 1; sudo pmset -a hibernatemode 3; sudo pmset -a disablesleep 0;
 
@@ -91,9 +91,8 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
 sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
-
 sudo nvram BootAudio=%00
-
+sudo nvram StartupMute=%01
 
 
 defaults write com.apple.Mail DisableSendAnimations -bool true
@@ -160,6 +159,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaremoteagent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.systemprofiler.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.Safari.SafeBrowsing.Service.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist 
 
@@ -213,6 +213,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.p
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothReporter.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.bluetoothd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobile.keybagd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
