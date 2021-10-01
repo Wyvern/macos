@@ -178,6 +178,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.SubmitDiagInfo.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.awdd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.aslmanager.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.nand.aspcarry.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.emond.aslmanager.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.plist
