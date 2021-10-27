@@ -102,7 +102,6 @@ defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.1
 defaults write com.apple.Safari WebKitResourceTimedLayoutDelay 0.1
 
 
-
 launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnosticextensionsd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.symptomsd-diag.plist
@@ -142,6 +141,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.networkserviceproxy-osx.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.siriactionsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsengagementd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.AMPLibraryAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreparsec.silhouette.plist
@@ -191,6 +192,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.mic
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.endpointsecurity.endpointsecurityd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagwatcher.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.InstallerDiagnostics.installerdiagd.plist 
