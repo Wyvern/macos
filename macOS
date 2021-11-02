@@ -140,7 +140,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parsecd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.networkserviceproxy-osx.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.universalaccessd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriactionsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsengagementd.plist
