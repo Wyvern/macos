@@ -5,15 +5,12 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 chsh -s /bin/zsh
 
-#disable kernel_task high cpu
-fsck -y 
-mount -uw /
-rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext
-
-# boot volume in Big Sur
+# boot volume in macOS
 csrutil disable
 csrutil authenticated-root disable
 sudo bless --folder /[mountpath]/System/Library/CoreServices --bootefi --create-snapshot
+
+xcrun simctl delete unavailable
 
 #disable/enable mds server
 sudo mdutil -a -i off/on
@@ -130,6 +127,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.macos.studentd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.routined.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ScreenTimeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.newsd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.dmd.agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.corespotlightd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
@@ -141,6 +139,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parsec-fbf.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.networkserviceproxy-osx.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.avatarsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.BiomeAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.biomesyncd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.universalaccessd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriactionsd.plist
@@ -189,6 +189,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.analyticsd.plis
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifianalyticsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.daily.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biokitaggdd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biometrickitd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
@@ -221,4 +223,5 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobile.keybagd.
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.newsyslog.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.managedconfiguration.teslad.plist 
