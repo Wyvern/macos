@@ -8,7 +8,8 @@ chsh -s /bin/zsh
 sudo mdutil -a -i off
 sudo mdutil -a -i on
 
- launchctl remove com.apple.mrt
+sudo  launchctl disable system/com.apple.MRTd
+sudo  launchctl remove system/com.apple.MRTd
 
 defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
 
