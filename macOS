@@ -8,17 +8,33 @@ chsh -s /bin/zsh
 sudo mdutil -a -i off
 sudo mdutil -a -i on
 
+sudo  launchctl disable system/com.apple.MRTa
 sudo  launchctl disable system/com.apple.MRTd
+
+sudo  launchctl disable  gui/501/com.apple.MRTa
+
+sudo  launchctl remove system/com.apple.MRTa
 sudo  launchctl remove system/com.apple.MRTd
 
+sudo  launchctl remove  gui/501/com.apple.MRTa
+
+
+#xcode speed up
 defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
+defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool NO
+
+defaults write com.apple.dt.xcodebuild PBXNumberOfParallelBuildSubtasks `sysctl -n hw.ncpu`
+defaults write com.apple.dt.xcodebuild IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
+defaults write com.apple.dt.Xcode PBXNumberOfParallelBuildSubtasks `sysctl -n hw.ncpu`
+defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
+
+
+xcrun simctl delete unavailable
 
 # boot volume in macOS
 csrutil disable
 csrutil authenticated-root disable
 sudo bless --folder /[mountpath]/System/Library/CoreServices --bootefi --create-snapshot
-
-xcrun simctl delete unavailable
 
 #disable/enable mds server
 sudo mdutil -a -i off/on
@@ -127,6 +143,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistant_service.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.donotdisturbd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familycircled.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familycontrols.useragent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familynotificationd.plist
@@ -173,6 +190,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.systemprofiler.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.Safari.SafeBrowsing.Service.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.metrickitd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ContextStoreAgent.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audio.coreaudiod.plist 
