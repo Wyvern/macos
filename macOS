@@ -195,7 +195,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ContextStoreAgent.pli
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audio.coreaudiod.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audio.coreaudiod.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.CrashReporterSupportHelper.plist
