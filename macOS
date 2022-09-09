@@ -2,21 +2,28 @@ MacOS:
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew analytics off
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+rm -rf /usr/local/var/homebrew/locks
+
+git config —system core.fsmonitor true
+git config —system --add --bool push.autoSetupRemote true
+/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -m pip install --upgrade pip
 
 chsh -s /bin/zsh
 
 sudo mdutil -a -i off
 sudo mdutil -a -i on
 
-sudo  launchctl disable system/com.apple.MRTa
-sudo  launchctl disable system/com.apple.MRTd
+launchctl disable gui/501/com.apple.XProtect.agent.scan
+sudo launchctl disable system/com.apple.XprotectFramework.PluginService
+sudo launchctl disable gui/501/com.apple.XprotectFramework.PluginService
 
-sudo  launchctl disable  gui/501/com.apple.MRTa
+launchctl remove gui/501/com.apple.XProtect.agent.scan
+sudo launchctl remove system/com.apple.XprotectFramework.PluginService
+sudo launchctl remove gui/501/com.apple.XprotectFramework.PluginService
 
-sudo  launchctl remove system/com.apple.MRTa
-sudo  launchctl remove system/com.apple.MRTd
-
-sudo  launchctl remove  gui/501/com.apple.MRTa
 
 
 #xcode speed up
@@ -64,7 +71,7 @@ defaults write  com.apple.frameworks.diskimages skip-verify -bool true
 defaults write  com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write  com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-brew cask install mpv
+brew install --cask mpv
 
 sudo systemsetup -getcomputersleep
 sudo systemsetup -setcomputersleep Never
@@ -192,8 +199,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.SafeEjectGPUAgent.pli
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.metrickitd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ContextStoreAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.Spotlight.plist 
 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audio.coreaudiod.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist 
