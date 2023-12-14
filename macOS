@@ -30,15 +30,6 @@ sudo launchctl disable system/com.apple.PerfPowerServicesExtended
 
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
-#xcode speed up
-defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
-defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool NO
-
-defaults write com.apple.dt.xcodebuild PBXNumberOfParallelBuildSubtasks `sysctl -n hw.ncpu`
-defaults write com.apple.dt.xcodebuild IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
-defaults write com.apple.dt.Xcode PBXNumberOfParallelBuildSubtasks `sysctl -n hw.ncpu`
-defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks `sysctl -n hw.ncpu`
-
 
 xcrun simctl delete unavailable
 
@@ -46,9 +37,6 @@ xcrun simctl delete unavailable
 csrutil disable
 csrutil authenticated-root disable
 sudo bless --folder /[mountpath]/System/Library/CoreServices --bootefi --create-snapshot
-
-#disable/enable mds server
-sudo mdutil -a -i off/on
 
 #disable OCSP 
 sudo defaults write /Library/Preferences/com.apple.security.revocation.plist OCSPStyle None
@@ -62,8 +50,6 @@ reboot
 Disable Gatekeeper
 sudo spctl --master-disable
 DevToolsSecurity -enable
-
-mdutil -i off -d /path/to/volume
 
 # Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -79,12 +65,6 @@ xcrun simctl delete unavailable
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
 defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool YES
-
-defaults write com.apple.Accessibility DifferentiateWithoutColor -int 1
-defaults write com.apple.Accessibility ReduceMotionEnabled -int 1
-defaults write com.apple.universalaccess reduceMotion -int 1
-defaults write com.apple.universalaccess reduceTransparency -int 1
-defaults write com.apple.Accessibility ReduceMotionEnabled -int 1
 
 defaults write .GlobalPreferences MultipleSessionsEnabled -bool TRUE
 
@@ -150,6 +130,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.assessmentagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ensemble.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
@@ -167,8 +148,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.homed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.homeenergyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.newsd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.dmd.agent.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.corespotlightd.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.corespeechd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist 
