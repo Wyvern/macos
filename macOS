@@ -14,8 +14,11 @@ sudo chflags noschg,nouchg . && sudo rm -rf * && sudo chflags schg,uchg .
 
 chsh -s /bin/zsh
 
-sudo mdutil -a -i off
-sudo mdutil -a -i on
+sudo mdutil -i off -a
+sudo mdutil -i on -a
+
+sudo mdutil -d /System/Volumes/Preboot /opt
+
 
 sudo launchctl disable gui/501/com.apple.XProtect.agent.scan.startup
 sudo launchctl disable gui/501/com.apple.XProtect.agent.scan
@@ -144,16 +147,13 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportPanic.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.sysdiagnose_agent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assessmentagent.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.fmfd.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.findmydeviced.findmydevice-user-agent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.assistant_service.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.SocialPushAgent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.transparencyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.peopled.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.donotdisturbd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.familycircled.plist
@@ -198,7 +198,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.pli
 launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaremoteagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.systemprofiler.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.metrickitd.plist
 
@@ -232,7 +231,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audioanalyticsd
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.osanalytics.osanalyticshelper.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biokitaggdd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biometrickitd.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.coresymbolicationd.plist 
