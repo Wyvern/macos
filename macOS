@@ -164,7 +164,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd-diag.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.CrashReporterSupportHelper.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.DumpPanic.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.DumpGPURestart.plist
@@ -183,18 +184,17 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.familycontrols.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sysdiagnose.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.analyticsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifianalyticsd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.analysis.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.daily.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audioanalyticsd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.osanalytics.osanalyticshelper.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.symptomsd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.powerlogHelperd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.applessdstatistics.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.wifivelocityd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.icloud.searchpartyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.gamecontrollerd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
@@ -206,3 +206,4 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.newsyslog.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
+
