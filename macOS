@@ -151,13 +151,14 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.siriknowledged.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.siriactionsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.amsengagementd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaanalysisd.plist 
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ContextStoreAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.FollowUpUI.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.followupd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.intelligenceplatformd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.BiomeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.cloudphotod.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.mediaremoteagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
 
@@ -190,6 +191,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.dai
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audioanalyticsd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.osanalytics.osanalyticshelper.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.contextstored.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biomed.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mobileassetd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.PerfPowerServices.plist 
