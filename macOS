@@ -161,7 +161,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.BiomeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
-
+launchctl unload -w /System/Library/LaunchAgents/com.apple.audio.AudioComponentRegistrar.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
@@ -203,10 +203,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.newsyslog.plist
-
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
-
