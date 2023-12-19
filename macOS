@@ -162,7 +162,9 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.BiomeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.audio.AudioComponentRegistrar.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.axassetsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.heard.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
