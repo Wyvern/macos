@@ -132,8 +132,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.chec
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ensemble.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adprivacyd.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.ap.adservicesd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.transparencyd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.peopled.plist
