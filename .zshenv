@@ -18,5 +18,7 @@ alias gi='grep -i'
 alias pn='ps -alxmrh|gi'
 alias curl='curl -fsSL'
 alias cm='git commit --allow-empty --allow-empty-message -am" "'
+alias fad='find /System/Library/LaunchAgents/ /System/Library/LaunchDaemons/ -iname "*"|grep -i '
+
 
 alias target='rustc -vV | grep -i host | cut -d: -f2'
