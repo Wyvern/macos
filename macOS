@@ -10,6 +10,7 @@ rm -rf /usr/local/var/homebrew/locks
 brew install --cask mpv
 
 /var/log
+/var/logs
 sudo chflags noschg,nouchg . && sudo rm -rf * && sudo chflags schg,uchg .
 
 chsh -s /bin/zsh
