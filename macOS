@@ -205,6 +205,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.GameController.
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.dprivacyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.nearbyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
