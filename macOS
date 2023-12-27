@@ -5,6 +5,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 brew analytics off
 
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+brew install starship
+
+# ~/.zshrc
+eval "$(starship init zsh)"
 
 rm -rf /usr/local/var/homebrew/locks
 brew install --cask mpv
