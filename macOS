@@ -8,10 +8,15 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 brew install starship
 
 # ~/.zshrc
+source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
 
 rm -rf /usr/local/var/homebrew/locks
 brew install --cask mpv
+
+brew install zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting
 
 /var/log
 /var/logs
@@ -24,6 +29,7 @@ sudo mdutil -i on -a
 
 sudo mdutil -d /System/Volumes/Preboot /opt
 
+https://dns11.quad9.net/dns-query
 
 sudo launchctl disable gui/501/com.apple.XProtect.agent.scan.startup
 sudo launchctl disable gui/501/com.apple.XProtect.agent.scan
@@ -168,6 +174,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.voicebankingd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.axassetsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.heard.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.plist
+
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
