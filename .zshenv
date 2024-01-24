@@ -3,9 +3,11 @@
 export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
 
+alias l='ls -AhlG'
+alias lx='ls -AhlGx'
 alias gt='git clone --filter=tree:0 --depth=1'
 alias diff='diff --color=always'
-alias daily='rustup update; omz update --unattended; brew upgrade; brew autoremove; brew cleanup; rdf;'
+alias daily='rustup update; brew upgrade; brew autoremove; brew cleanup; rdf;'
 alias rdf='echo --- "\x1b[4m" rustc -Z "\x1b[0m" ---"\n" ; rustc -Z help|diff ~/Desktop/rz.txt -; echo --- "\x1b[4m" rustc -C "\x1b[0m" ---"\n" ; rustc -C help|diff ~/Desktop/rc.txt -; echo --- "\x1b[4m" cargo -Z "\x1b[0m" ---"\n" ; cargo -Z help|diff ~/Desktop/cargo.txt -'
 alias rt='cargo clean && cargo b'
 alias rla='rustc -Cllvm-args=--help|grep -i'
