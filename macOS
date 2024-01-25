@@ -1,22 +1,27 @@
 MacOS:
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Rust
+export RUSTUP_HOME=/opt/Rust/.rustup
+export CARGO_HOME=/opt/Rust/.cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --component rustc-codegen-cranelift
+
+# brew
 /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
-
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-brew install starship
+brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget git --cask mpv
 
 # ~/.zshrc
 source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
+fpath+=~/.zfunc
+# Rustup/cargo completions
+mkdir ~/.zfunc
+rustup completions zsh > ~/.zfunc/_rustup
+rustup completions zsh cargo > ~/.zfunc/_cargo
 
 rm -rf /usr/local/var/homebrew/locks
-brew install --cask mpv
-
-brew install zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting
 
 /var/log
 /var/logs
