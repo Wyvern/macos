@@ -3,8 +3,9 @@
 export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
 
-alias l='ls -AhlG'
-alias lx='ls -AhlGx'
+alias l='ls -AhGx'
+alias ll='ls -AhlG'
+alias grep='grep --color=always'
 alias gt='git clone --filter=tree:0 --depth=1'
 alias diff='diff --color=always'
 alias daily='rustup update; brew upgrade; brew autoremove; brew cleanup; rdf;'
