@@ -16,11 +16,12 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
 fpath+=~/.zfunc
-# Rustup/cargo completions
-mkdir ~/.zfunc
+
 rustup completions zsh > ~/.zfunc/_rustup
 rustup completions zsh cargo > ~/.zfunc/_cargo
 
+
+#unlock homebrew 
 rm -rf /usr/local/var/homebrew/locks
 
 /var/log
@@ -180,6 +181,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.axasset
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.heard.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.cache_delete.plist
 
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
@@ -224,6 +226,7 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.p
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.nearbyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.deleted_helper.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
