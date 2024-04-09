@@ -1,4 +1,5 @@
 MacOS:
+sudo ./createinstallmedia --volmue /Volumes/Install\ macOS\ Sonoma/
 
 # Rust
 export RUSTUP_HOME=/opt/Rust/.rustup
@@ -49,6 +50,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 
 xcrun simctl delete unavailable
+
+defaults write com.apple.screencapture type heic;killall SystemUIServer
 
 # boot volume in macOS
 csrutil disable
@@ -181,7 +184,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.axasset
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.heard.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.cache_delete.plist
 
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
@@ -226,7 +228,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.rtcreportingd.p
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mediaremoted.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.nearbyd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.deleted_helper.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.logd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.syslogd.plist
