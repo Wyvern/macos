@@ -1,6 +1,7 @@
 MacOS:
+13820837111 刘
 sudo ./createinstallmedia --volmue /Volumes/Install\ macOS\ Sonoma/
-
+18522973816 杨  kf02213371
 # Rust
 export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
@@ -213,7 +214,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.ana
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.daily.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.audioanalyticsd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.osanalytics.osanalyticshelper.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist 
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.watchdogd.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ocspd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.contextstored.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.biomed.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.siriinferenced.plist
