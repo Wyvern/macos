@@ -181,7 +181,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.intelligenceplatformd
 launchctl unload -w /System/Library/LaunchAgents/com.apple.BiomeAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.WiFiVelocityAgent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.triald.plist
-launchctl unload -w /System/Library/LaunchAgents/com.apple.newsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.rapportd-user.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.voicebankingd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.axassetsd.plist
