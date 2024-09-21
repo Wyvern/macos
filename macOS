@@ -151,6 +151,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.generativeexperiences
 launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.financed.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ensemble.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ndoagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist 
