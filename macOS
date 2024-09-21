@@ -81,6 +81,7 @@ defaults write  com.apple.frameworks.diskimages skip-verify -bool true
 defaults write  com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write  com.apple.frameworks.diskimages skip-verify-remote -bool true
 
+sudo rm -rf /Applications/News.app
 
 xcrun simctl delete unavailable
 defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
@@ -151,6 +152,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.UsageTrackingAgent.pl
 launchctl unload -w /System/Library/LaunchAgents/com.apple.parentalcontrols.check.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ensemble.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ndoagent.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.icloud.searchpartyuseragent.plist 
 launchctl unload -w /System/Library/LaunchAgents/com.apple.assistantd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.transparencyd.plist
