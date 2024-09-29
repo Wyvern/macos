@@ -3,7 +3,7 @@
 export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
 export HOMEBREW_NO_AUTO_UPDATE=1
-export BINSTALL_DISABLE_TELEMETRY=1
+export BINSTALL_DISABLE_TELEMETRY="true"
 export PYTHON_JIT=1
 
 alias l='ls -AhGx'
@@ -30,9 +30,23 @@ alias ze='zig build-exe -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwin
 alias zf='zig build-exe -OReleaseFast --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc'
 alias zl='zig build-lib -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIC -z nocopyreloc'
 alias zr='zig run -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc'
-alias zt='zig test -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc'
 
 alias target='rustc -vV | grep -i host | cut -d: -f2'
 alias ti='rustc --print target-list|gi '
 alias cpu='rustc --print target-cpus --target '
 alias feature='rustc --print target-features --target'
+
+function zt() {
+  local target="$1"
+  local filter="$2"
+
+  if [[ -z "$target" ]]; then
+    echo Please input a test "<file.zig>".
+    return
+  fi
+  if [[ -z "$filter" ]]; then
+    zig test -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc $target
+  else
+    zig test -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc $target --test-filter $filter
+  fi
+}
