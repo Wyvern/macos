@@ -2,8 +2,6 @@
 
 export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
-export HOMEBREW_NO_AUTO_UPDATE=1
-export BINSTALL_DISABLE_TELEMETRY="true"
 export PYTHON_JIT=1
 
 alias l='ls -AhGx'
@@ -26,6 +24,7 @@ alias pn='ps -alxmrh|gi'
 alias curl='curl --tcp-fastopen --tcp-nodelay -fSLA "Mozilla Firefox/Edge/Chrome" '
 alias cm='git commit --allow-empty --allow-empty-message -am" "'
 alias fad='find /System/Library/LaunchAgents/ /System/Library/LaunchDaemons/ -iname "*"|grep -i'
+
 alias ze='zig build-exe -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc'
 alias zf='zig build-exe -OReleaseFast --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc'
 alias zl='zig build-lib -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIC -z nocopyreloc'
@@ -37,16 +36,18 @@ alias cpu='rustc --print target-cpus --target '
 alias feature='rustc --print target-features --target'
 
 function zt() {
-  local target="$1"
-  local filter="$2"
+    if [ $# -eq 0 ];then
+        echo "Please input a test file: '<file.zig>'".
+        return
+    fi
 
-  if [[ -z "$target" ]]; then
-    echo Please input a test "<file.zig>".
-    return
-  fi
-  if [[ -z "$filter" ]]; then
-    zig test -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc $target
-  else
-    zig test -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc $target --test-filter $filter
-  fi
+    local target="$1"
+    shift
+    filter=""
+
+    for arg in "$@"; do
+        filter+="--test-filter \"$arg\" "
+    done
+
+    eval "zig test -dynamic -OReleaseSmall --gc-sections -fstrip -fno-unwind-tables -fomit-frame-pointer -fno-formatted-panics -mno-red-zone -fno-reference-trace -fPIE -fPIC -z nocopyreloc $target $filter"
 }
