@@ -192,7 +192,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.duetexpertd.plist
-
+launchctl unload -w /System/Library/LaunchAgents/com.apple.betaenrollmentd.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
