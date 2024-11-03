@@ -193,6 +193,8 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.pl
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.duetexpertd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.betaenrollmentd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.geoanalyticsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.geodMachServiceBridge.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
