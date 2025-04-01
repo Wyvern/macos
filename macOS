@@ -199,6 +199,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.voicebankingd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.axassetsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.accessibility.heard.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.feedbackd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.duetexpertd.plist
