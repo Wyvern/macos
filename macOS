@@ -49,6 +49,14 @@ sudo launchctl disable system/com.apple.PerfPowerServicesExtended
 
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
+sudo launchctl disable system/com.apple.news.today
+sudo launchctl disable system/com.apple.news.todayintents
+sudo launchctl disable system/com.apple.news.tag
+
+sudo launchctl disable system/com.apple.HomeWidget
+sudo launchctl disable system/com.apple.HomeEnergyWidgetsExtension
+launchctl disable user/$(id -u)/com.apple.HomeWidget
+launchctl disable user/$(id -u)/com.apple.HomeEnergyWidgetsExtension
 
 xcrun simctl delete unavailable
 
@@ -71,6 +79,7 @@ reboot
 Disable Gatekeeper
 sudo spctl --master-disable
 DevToolsSecurity -enable
+sudo pmset -a powernap 0
 
 # Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -93,6 +102,7 @@ defaults write .GlobalPreferences MultipleSessionsEnabled -bool TRUE
 defaults write "Apple Global Domain" MultipleSessionsEnabled -bool true
 defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write -g network_enable-l4s -bool true
+defaults write com.apple.finder CalculateAllSizes -bool false
 
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g NSWindowResizeTime -float 0.001
@@ -195,6 +205,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.duetexpertd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.betaenrollmentd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.geoanalyticsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.geodMachServiceBridge.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.naturallanguaged.plist
 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportMemoryException.plist
