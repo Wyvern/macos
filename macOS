@@ -205,6 +205,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useracti
 launchctl unload -w /System/Library/LaunchAgents/com.apple.duetexpertd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.betaenrollmentd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.geoanalyticsd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.inputanalyticsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.geodMachServiceBridge.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.naturallanguaged.plist
 
