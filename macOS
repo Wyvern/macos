@@ -10,7 +10,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-t
 # brew
 /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
-brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget git --cask stolendata-mpv
+brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget git --cask stolendata-mpv qview
 
 # ~/.zshrc
 source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
