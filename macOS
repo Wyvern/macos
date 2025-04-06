@@ -11,7 +11,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-t
 /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
 brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget zigup git go gopls —cask stolendata-mpv qview
-brew install --ignore-dependencies zls 
+brew install --ignore-dependencies zls cargo-zigbuild
 
 # ~/.zshrc
 source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -58,6 +58,9 @@ sudo launchctl disable system/com.apple.HomeWidget
 sudo launchctl disable system/com.apple.HomeEnergyWidgetsExtension
 launchctl disable user/$(id -u)/com.apple.HomeWidget
 launchctl disable user/$(id -u)/com.apple.HomeEnergyWidgetsExtension
+sudo launchctl disable gui/$(id -u)/com.apple.HomeWidget
+sudo launchctl disable gui/$(id -u)/com.apple.HomeEnergyWidgetsExtension
+
 
 xcrun simctl delete unavailable
 
