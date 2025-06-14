@@ -206,6 +206,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.helpd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.feedbackd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.textunderstandingd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.coreservices.useractivityd.plist
+launchctl unload -w /System/Library/LaunchAgents/com.apple.recentsd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.duetexpertd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.betaenrollmentd.plist
 launchctl unload -w /System/Library/LaunchAgents/com.apple.geoanalyticsd.plist
