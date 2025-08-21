@@ -5,7 +5,7 @@ sudo ./createinstallmedia --volmue /Volumes/Install\ macOS\ Sonoma/
 # Rust
 export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --component rustc-codegen-cranelift
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --component rust-analyzer rust-src
 
 # brew
 /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -84,6 +84,10 @@ Disable Gatekeeper
 sudo spctl --master-disable
 DevToolsSecurity -enable
 sudo pmset -a powernap 0
+
+sudo launchctl disable system/com.apple.appleseed.fbahelperd
+launchctl disable gui/$(id -u)/com.apple.appleseed.fbahelperd
+
 
 # Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
