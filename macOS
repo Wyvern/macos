@@ -266,7 +266,6 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.sandboxd.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.aneuserd.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ospredictiond.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.aned.plist
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.security.syspolicy.plist 
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.periodic-*.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.systemstats.microstackshot_periodic.plist
 
