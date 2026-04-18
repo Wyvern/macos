@@ -7,10 +7,13 @@ export RUSTUP_HOME=/opt/Rust/.rustup
 export CARGO_HOME=/opt/Rust/.cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly --component rust-analyzer rust-src
 
+zigup --install-dir /opt/Zig --path-link /usr/local/bin/zig 0.16.0 
+install directory '/opt/Zig'
+
 # brew
 /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
-brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget zigup git go gopls —cask stolendata-mpv qview
+brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget zigup git go gopls —cask qview ghostty puremac
 brew install --ignore-dependencies zls cargo-zigbuild
 
 # ~/.zshrc
@@ -130,6 +133,8 @@ defaults write com.apple.finder QLEnableSlowMotion -bool false
 defaults write com.apple.dock expose-animation-duration -float 0
 defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES	
 defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock mineffect -string scale
 defaults write com.apple.dock workspaces-edge-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0
 defaults write com.apple.dock autohide-delay -float 0
