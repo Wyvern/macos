@@ -13,8 +13,8 @@ install directory '/opt/Zig'
 # brew
 /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew analytics off
-brew install starship zsh-autocomplete zsh-autosuggestions zsh-fast-syntax-highlighting wget zigup git go gopls —cask qview ghostty puremac
-brew install --ignore-dependencies zls cargo-zigbuild
+brew install starship zsh-autocomplete  zsh-fast-syntax-highlighting wget zigup git  taplo tombi —cask qview ghostty puremac 
+
 
 # ~/.zshrc
 source /usr/local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
